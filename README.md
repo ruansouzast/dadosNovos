@@ -1,17 +1,16 @@
 # Projeto de Análise de Dados
 
-# Integrantes
-- Ruan Felipe
-- gustavo henrique
-- joao pedro morais
+Este projeto foi desenvolvido com o objetivo de analisar dados relacionados a salários na área de tecnologia.
 
-# Descrição
-Projeto de análise e visualização de dados sobre salários na área de tecnologia.
+Primeiro os dados foram tratados no Google Colab utilizando Python e pandas, onde foi realizada a limpeza das informações, remoção de dados nulos e duplicados.
 
-Os dados foram tratados no Google Colab utilizando Python e pandas.
-depois, foram criadas visualizações no ObservableHQ utilizando Vega-Lite.
+Após o tratamento, os dados foram utilizados no ObservableHQ para criação de visualizações utilizando Vega-Lite.
 
-# Arquivos
-- dados_limpos (2).csv
+As análises feitas buscam identificar padrões entre salario, experiência profissional, país de residência e tipo de contratação.
+
+# Arquivos do Projeto
+
+dados_limpos (2).csv
+
 # Notebook ObservableHQ
 https://observablehq.com/d/0d23a97d1b57718d
