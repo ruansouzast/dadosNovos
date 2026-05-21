@@ -12,5 +12,9 @@ As análises feitas buscam identificar padrões entre salario, experiência prof
 
 dados_limpos (2).csv
 
-# Notebook ObservableHQ
+# Notebook ObservableHQ PT1
 https://observablehq.com/d/0d23a97d1b57718d
+
+
+# Notebook ObservableHQ PT2 
+https://observablehq.com/d/59538632e13f44a6
