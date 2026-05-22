@@ -1,6 +1,6 @@
 # Projeto de Análise de Dados
-João Pedro Morais - Codificação e tratamento de dados
-Ruan Felipe - Codificação e geração de graficos
+João Pedro Morais - Codificação e tratamento de dados               
+Ruan Felipe - Codificação e geração de graficos                
 Gustavo Henrike - Geração de graficos e analise de graficos
 
 Este projeto foi desenvolvido com o objetivo de analisar dados relacionados a salários na área de tecnologia.
