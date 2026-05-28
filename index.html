@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datalytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Vega & Vega-Lite & Vega-Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 18h4v-8H3v8zm6 0h4V6H9v12zm6 0h4v-5h-4v5z"/></svg>
+      </div>
+      Datalytics
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">Sobre</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-primary">Ver Dashboard</button>
+    </div>
+  </nav>
+
+  <!-- HERO FULLSCREEN -->
+  <section class="hero">
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-inner">
+
+      <!-- LEFT: texto -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Análise real
+        </div>
+        <h1 class="hero-title">
+          Análise de<br>
+          <span class="hero-title-accent">dados</span><br>
+          Observable+vega-lite 
+        </h1>
+        <p class="hero-desc">
+        Análisando dados da área de tecnologia, graficos que foram feitos no Observable e dados Tratados no google colab,Os dados analisados possuem informações sobre:
+
+-salário
+-experiência profissional
+-país do funcionário
+-tipo de contrataçãos
+        </p>
+        <div class="hero-cta">
+          <a class="btn-hero" href="https://github.com/ruansouzast/dadosNovos" target="_blank" rel="noreferrer">Saber Mais</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-val">Ruan Felipe</span>
+            <span class="stat-label">Dev</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">Gustavo Henrike</span>
+            <span class="stat-label">Viado</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">João Pedro Morais</span>
+            <span class="stat-label">Viado</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: carrossel de gráficos -->
+      <div class="hero-visual">
+
+        <!-- Slides -->
+        <div class="slides-wrapper">
+
+          <!-- Slide 1: Receita Mensal -->
+          <div class="slide active" id="slide-0">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Receita anual</span>
+                <span class="chart-period"></span>
+              </div>
+              <div id="chart-0" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Esse gráfico mostra a média salarial por nível de experiência, quanto maior a experiência, maior o salário.</div>
+              <div class="metric-chips">
+                
+               
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Distribuição de Clientes -->
+          <div class="slide" id="slide-1">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Distribuição de Profissionais</span>
+                <span class="chart-period">Por segmento</span>
+              </div>
+              <div id="chart-1" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Esse gráfico mostra a quantidade de profissionais existentes em cada nível de experiência.</div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Contratação por Tipo -->
+          <div class="slide" id="slide-2">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Contratação por Tipo</span>
+                <span class="chart-period">Contagem por emprego</span>
+              </div>
+              <div id="chart-2" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Conta quantos trabalhadores existem em cada tipo de contratação, mostrando as modalidades mais comuns.</div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Profissionais por País -->
+          <div class="slide" id="slide-3">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Profissionais por País</span>
+                <span class="chart-period">Contagem por país</span>
+              </div>
+              <div id="chart-3" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Apresenta quantos profissionais estão localizados em cada país, evidenciando as regiões mais representadas.</div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Profissionais por País -->
+          <div class="slide" id="slide-4">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Salário por País</span>
+                <span class="chart-period">Distribuição geográfica</span>
+              </div>
+              <div id="chart-4" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Esse gráfico compara a média salarial entre diferentes países.</div>
+            </div>
+          </div>
+
+          <!-- Slide 6: Salário Médio por País -->
+          <div class="slide" id="slide-5">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Salário Médio por País</span>
+                <span class="chart-period">Média salarial</span>
+              </div>
+              <div id="chart-5" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">Esse gráfico mostra a quantidade de proffionais em cada faixa salarial.</div>
+            </div>
+          </div>
+
+          <!-- Slide 7: Faixa Salarial -->
+          <div class="slide" id="slide-6">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Faixa Salarial</span>
+                <span class="chart-period">Distribuição de contrato</span>
+              </div>
+              <div id="chart-6" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">O gráfico compara a experiencia dos profissionais em cada tipo de contrato. O tamanho do circulo diz a quantidade media de profissionais existente.
+EN:iniciante, MI:intermediário, SE:sênior, EX:executivo, FT: tempo integral, PT:meio período, CT:contrato, FL: freelancer</div>
+            </div>
+          </div>
+
+          <!-- Slide 8: Experiência x Contratação -->
+          <div class="slide" id="slide-7">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Proporção x Contrato</span>
+                <span class="chart-period">Quantidade por tipo de contrato</span>
+              </div>
+              <div id="chart-7" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">O gráfico de pizza apresenta a proporção entre os diferentes tipos de contratação.
+
+ Cada cor representa um modelo de trabalho,
+
+A Maior parte dos proffisionais trabalha em tempo integral.</div>
+            </div>
+          </div>
+
+          <!-- Slide 9: Boxplot de Salários -->
+          <div class="slide" id="slide-8">
+            <div class="chart-card">
+              <div class="chart-card-header">
+                <span class="chart-card-title">Boxplot Salarial</span>
+                <span class="chart-period">Salários por experiência</span>
+              </div>
+              <div id="chart-8" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">o boxplot mostra a variação salarial em cada nivel de experiencia.
+  Caixa = onde está a maioria dos salários,
+os Pontinhos soltos = casos fora do padrão.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.slides-wrapper -->
+
+        <!-- Botão de navegação -->
+        <button class="slide-btn slide-btn-prev" onclick="goToSlide(currentSlide - 1)" aria-label="Gráfico anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="slide-btn slide-btn-next" onclick="nextSlide()" aria-label="Próximo gráfico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+
+      </div><!-- /.hero-visual -->
+    </div><!-- /.hero-inner -->
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

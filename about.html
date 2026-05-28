@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre | Datalytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 18h4v-8H3v8zm6 0h4V6H9v12zm6 0h4v-5h-4v5z"/></svg>
+      </div>
+      Datalytics
+    </a>
+    <ul class="nav-links">
+     
+      <li><a href="index.html">Gráficos</a></li>
+    
+      <li><a href="about.html" class="active">Sobre</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="window.location='index.html'">Voltar</button>
+      <button class="btn-primary" onclick="window.location='index.html'">Dashboard</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="overflow: auto; min-height: 100vh; padding-top: 100px;">
+    <div class="hero-inner" style="max-width: 960px; margin: 0 auto; padding: 40px 20px;">
+      <div class="hero-text" style="max-width: 720px;">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Sobre mim
+        </div>
+        <h1 class="hero-title">
+          Ruan Souza
+        </h1>
+        <p class="hero-desc" style="margin-top: 24px; font-size: 1rem; line-height: 1.8; max-width: 680px;">
+          Esta página foi criada por minha equipe para apresentar um projeto de dados e compartilhar nossa análise com vocês. No meu github você encontra nossas  principais habilidades e onde acompanhar os projetos.
+        </p>
+
+        <div class="hero-stats" style="margin-top: 32px; display: grid; gap: 18px;">
+          <div class="hero-stat">
+            <span class="stat-val">Desenvolvedor</span>
+            <span class="stat-label">FullStack</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">GitHub</span>
+            <span class="stat-label"><a href="https://github.com/ruansouzast" target="_blank" rel="noreferrer" style="color: inherit; text-decoration: underline;">github.com/ruansouzast</a></span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-val">Objetivo</span>
+            <span class="stat-label">Criar dashboards limpos, interativos e fáceis de usar.</span>
+          </div>
+        </div>
+
+        <div class="hero-cta" style="margin-top: 36px; gap: 12px; display: flex; flex-wrap: wrap;">
+          <button class="btn-primary" onclick="window.location='index.html'">Ver Dashboard</button>
+          <button class="btn-outline-hero" onclick="window.open('https://github.com/ruansouzast', '_blank')">
+            Ver GitHub
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
