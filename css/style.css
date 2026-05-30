@@ -759,21 +759,22 @@ transform: none;
     padding: 14px;
   }
 
-  /* GRÁFICOS */
+  /*graficos*/
+
   #chart-0,
-  #chart-1,
-  #chart-2,
-  #chart-3,
-  #chart-4,
-  #chart-5,
-  #chart-6,
-  #chart-7,
-  #chart-8 {
-    height: 250px !important;
-    width: 700px !important;
-    zoom: 0.5;
-    margin: auto;
-  }
+#chart-1,
+#chart-2,
+#chart-3,
+#chart-4,
+#chart-5,
+#chart-6,
+#chart-7,
+#chart-8 {
+    width: 100% !important;
+    max-width: 100%;
+    height: 280px !important;
+    margin: 0 auto;
+}
  
   /* BOTÕES DO SLIDE */
   .slide-btn {
