@@ -1,13 +1,11 @@
-/* =============================================
-   DATALYTICS — main.js
-   ============================================= */
 
-// ── Estado do carrossel ──────────────────────
+
+// ── Estado do carrossel 
 let currentSlide = 0;
 const TOTAL_SLIDES = 9;
 let dados = null;
 
-// ── Carregamento de dados ────────────────────
+// ── Carregamento de dados 
 async function carregarDados() {
   try {
     dados = await d3.csv("https://raw.githubusercontent.com/ruansouzast/dadosNovos/main/dados_limpos%20(2).csv");
@@ -18,20 +16,20 @@ async function carregarDados() {
   }
 }
 
-// ── Renderizar gráficos ──────────────────────
+// ── Renderizar gráficos
 function renderCharts() {
-  renderChart0(); // Gráfico 1
-  renderChart1(); // Gráfico 2
-  renderChart2(); // Gráfico 3
-  renderChart3(); // Gráfico 4
-  renderChart4(); // Gráfico 5
-  renderChart5(); // Gráfico 6
-  renderChart6(); // Gráfico 7
-  renderChart7(); // Gráfico 8
-  renderChart8(); // Gráfico 9
+  renderChart0(); 
+  renderChart1(); 
+  renderChart2(); 
+  renderChart3(); 
+  renderChart4(); 
+  renderChart5(); 
+  renderChart6(); 
+  renderChart7();
+  renderChart8(); 
 }
 
-// Gráfico 0 - Experiência vs Salário Médio
+// Grafico 0 - Experiência vs Salário Médio
 function renderChart0() {
   const container = document.getElementById("chart-0");
   if (!container) return;
@@ -60,7 +58,7 @@ function renderChart0() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 1 - Quantidade por Experiência
+// Grafico 1 - quantidade por experiência
 function renderChart1() {
   const container = document.getElementById("chart-1");
   if (!container) return;
@@ -88,7 +86,7 @@ function renderChart1() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 2 - Contratação por Tipo
+// Grafico 2 - contratação por Tipo
 function renderChart2() {
   const container = document.getElementById("chart-2");
   if (!container) return;
@@ -116,7 +114,7 @@ function renderChart2() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 3 - Profissionais por País
+// Grafico 3 - profissionais por país
 function renderChart3() {
   const container = document.getElementById("chart-3");
   if (!container) return;
@@ -144,7 +142,7 @@ function renderChart3() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 4 - Salário Médio por País
+// gráfico 4 - salário médio por País
 function renderChart4() {
   const container = document.getElementById("chart-4");
   if (!container) return;
@@ -173,7 +171,7 @@ function renderChart4() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 5 - Faixa Salarial
+// Grafico 5 - faixa Salarial
 function renderChart5() {
   const container = document.getElementById("chart-5");
   if (!container) return;
@@ -202,7 +200,7 @@ function renderChart5() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 6 - Experiência x Contratação
+// Grafico 6 - experiência x Contratação
 function renderChart6() {
   const container = document.getElementById("chart-6");
   if (!container) return;
@@ -235,7 +233,7 @@ function renderChart6() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 7 - Contratação por Tipo (Pizza)
+// Grafico 7 - contratação por Tipo (Pizza)
 function renderChart7() {
   const container = document.getElementById("chart-7");
   if (!container) return;
@@ -262,7 +260,7 @@ function renderChart7() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Gráfico 8 - Boxplot Salarial por Experiência
+// gráfico 8 - boxplot Salarial por experiência
 function renderChart8() {
   const container = document.getElementById("chart-8");
   if (!container) return;
@@ -290,32 +288,32 @@ function renderChart8() {
   vegaEmbed(container, spec, {actions: false});
 }
 
-// ── Ir para um slide específico ──────────────
+// ── Ir para um slide específico
 function goToSlide(index) {
-  // Remove active do slide atual
+
   const prev = document.getElementById(`slide-${currentSlide}`);
   if (prev) prev.classList.remove('active');
 
   // Atualiza índice (com loop)
   currentSlide = (index + TOTAL_SLIDES) % TOTAL_SLIDES;
 
-  // Ativa o novo slide
+  //ativa o novo slide
   const next = document.getElementById(`slide-${currentSlide}`);
   if (next) next.classList.add('active');
 
-  // Atualiza os dots
+  //atualiza os dots
   updateDots();
 
-  // Atualiza floating card com dados do slide
+  //atualiza floating card com dados do slide
   updateFloatCard();
 }
 
-// ── Avança para o próximo slide ──────────────
+// avança para o próximo slide 
 function nextSlide() {
   goToSlide(currentSlide + 1);
 }
 
-// ── Sincroniza os dots de navegação ─────────
+//sincroniza os dots de navegaçao 
 function updateDots() {
   const dots = document.querySelectorAll('.dot');
   dots.forEach((dot, i) => {
@@ -323,7 +321,7 @@ function updateDots() {
   });
 }
 
-// ── Dados dos floating cards por slide ───────
+//Dados dos floating cards por slide
 const floatData = [
   { val: '2.4k',  label: 'Média salarial' },
   { val: '4.8k',  label: 'Total de registros' },
@@ -346,13 +344,13 @@ function updateFloatCard() {
   labelEl.textContent = data.label;
 }
 
-// ── Navegação por teclado ────────────────────
+// Navegação por teclado 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextSlide();
   if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goToSlide(currentSlide - 1);
 });
 
-// ── Swipe touch para mobile ──────────────────
+//Swipe touch para mobile 
 let touchStartX = 0;
 
 document.addEventListener('touchstart', (e) => {
@@ -367,10 +365,9 @@ document.addEventListener('touchend', (e) => {
   }
 });
 
-// ── Auto-play opcional (descomentando ativa) ──
-// setInterval(nextSlide, 5000);
 
-// ── Init ─────────────────────────────────────
+
+
 document.addEventListener('DOMContentLoaded', () => {
   carregarDados();
   updateDots();

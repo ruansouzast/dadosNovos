@@ -1,6 +1,4 @@
-/* =============================================
-   DATALYTICS — style.css
-   ============================================= */
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -36,7 +34,7 @@ html, body {
   color: var(--gray-800);
 }
 
-/* ── NAVBAR ── */
+/*NAVBAR */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -126,7 +124,7 @@ html, body {
   box-shadow: 0 8px 22px rgba(124,58,237,0.4);
 }
 
-/* ── HERO FULLSCREEN ── */
+/* HERO FULLSCREEN */
 .hero {
   position: relative;
   width: 100%;
@@ -173,7 +171,7 @@ html, body {
   50%      { transform: translateY(-28px) scale(1.06); }
 }
 
-/* ── HERO INNER GRID ── */
+/*HERO INNER GRID */
 .hero-inner {
   max-width: 1200px;
   width: 100%;
@@ -187,7 +185,7 @@ html, body {
   z-index: 1;
 }
 
-/* ── HERO TEXT ── */
+/*HERO TEXT*/
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -621,10 +619,9 @@ transform: none;
   box-shadow: 0 10px 30px rgba(124,58,237,0.5);
 }
 
-/* ── DESATIVAR MOVIMENTO NO HOVER (BOTÕES) ── */
-/* Remove qualquer transform aplicado no :hover e evita animação de transform */
+
 .btn-primary, .btn-hero, .btn-outline-hero, .btn-ghost, .slide-btn {
-  /* Não animar transform/posição */
+  
   transition-property: box-shadow, background-color, color;
   transition-duration: 0s;
 }
