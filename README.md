@@ -20,4 +20,4 @@ https://observablehq.com/d/0d23a97d1b57718d
 
 
 # Notebook ObservableHQ PT2 
-https://observablehq.com/d/59538632e13f44a6
+https://observablehq.com/d/2be34318a07e85f1
