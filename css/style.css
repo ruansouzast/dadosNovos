@@ -392,9 +392,85 @@ html, body {
 .chart-svg { width: 100%; display: block; }
 
 /* ── Observable Chart Containers ── */
-#chart-0, #chart-1, #chart-2, #chart-3, #chart-4, #chart-5, #chart-6, #chart-7, #chart-8 {
+#chart-0 {
   margin: 12px 0 16px;
   border-radius: 8px;
+  height: 270px !important;
+    width: 800px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-1 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-2 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-3 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-4 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-5 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-6 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 400px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+ #chart-7 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 370px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
+}
+
+#chart-8 {
+  margin: 12px 0 16px;
+  border-radius: 8px;
+  height: 370px !important;
+    width: 799px !important;
+    zoom: 0.8;
+    margin: auto;
 }
 
 #chart-0 svg, #chart-1 svg, #chart-2 svg, #chart-3 svg, #chart-4 svg, #chart-5 svg, #chart-6 svg, #chart-7 svg, #chart-8 svg {

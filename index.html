@@ -10,8 +10,10 @@
   <!-- Vega & Vega-Lite & Vega-Embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0/build/vega-lite-api.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot/dist/plot.umd.min.js"></script>
 </head>
 <body>
 
@@ -165,11 +167,13 @@
           <div class="slide" id="slide-6">
             <div class="chart-card">
               <div class="chart-card-header">
-                <span class="chart-card-title">Faixa Salarial</span>
+                <span class="chart-card-title">Experiência x Contratação</span>
                 <span class="chart-period">Distribuição de contrato</span>
               </div>
               <div id="chart-6" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
-              <div class="chart-desc">O gráfico compara a experiencia dos profissionais em cada tipo de contrato. O tamanho do circulo diz a quantidade media de profissionais existente.
+              <div class="chart-desc">Esse gráfico relaciona o nível de experiência com o tipo de contratação.
+
+Profissionais mais experientes aparecem principalmente em contratos de tempo integral.
 EN:iniciante, MI:intermediário, SE:sênior, EX:executivo, FT: tempo integral, PT:meio período, CT:contrato, FL: freelancer</div>
             </div>
           </div>
@@ -178,15 +182,13 @@ EN:iniciante, MI:intermediário, SE:sênior, EX:executivo, FT: tempo integral, P
           <div class="slide" id="slide-7">
             <div class="chart-card">
               <div class="chart-card-header">
-                <span class="chart-card-title">Proporção x Contrato</span>
-                <span class="chart-period">Quantidade por tipo de contrato</span>
+                <span class="chart-card-title">Salário x Contrato</span>
+                <span class="chart-period">Salário por tipo de contrato</span>
               </div>
-              <div id="chart-7" style="width: 100%; height: 220px; display: flex; align-items: center; justify-content: center;"></div>
-              <div class="chart-desc">O gráfico de pizza apresenta a proporção entre os diferentes tipos de contratação.
+              <div id="chart-7" style="width: 100%; height: 520px; display: flex; align-items: center; justify-content: center;"></div>
+              <div class="chart-desc">O gráfico mostra que profissionais contratados na modalidade Contract (CT) apresentam a maior média salarial em comparação aos demais tipos de contratação, Isso ocorre porque contratos desse tipo geralmente são firmados para projetos especificos, de curta duração ou que exigem conhecimentos altamente especializados.
 
- Cada cor representa um modelo de trabalho,
-
-A Maior parte dos proffisionais trabalha em tempo integral.</div>
+A maior parte dos profissionais trabalha em tempo integral.</div>
             </div>
           </div>
 

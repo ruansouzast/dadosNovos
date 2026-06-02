@@ -8,7 +8,7 @@ let dados = null;
 // ── Carregamento de dados 
 async function carregarDados() {
   try {
-    dados = await d3.csv("https://raw.githubusercontent.com/ruansouzast/dadosNovos/main/dados_limpos%20(2).csv");
+    dados = await d3.csv("https://raw.githubusercontent.com/ruansouzast/dadosNovos/main/dados_limpos%20(2).csv", d3.autoType);
     console.log("Dados carregados:", dados);
     renderCharts();
   } catch (error) {
@@ -204,60 +204,55 @@ function renderChart5() {
 function renderChart6() {
   const container = document.getElementById("chart-6");
   if (!container) return;
+  if (typeof vl === "undefined") {
+    console.error("Vega-Lite API não está carregado; instale o script CDN antes de main.js");
+    return;
+  }
 
-  const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "mark": "circle",
-    "data": { "values": dados || [] },
-    "encoding": {
-      "x": {
-        "field": "experience_level",
-        "type": "nominal",
-        "title": "Experiência"
-      },
-      "y": {
-        "field": "employment_type",
-        "type": "nominal",
-        "title": "Contratação"
-      },
-      "size": {
-        "aggregate": "count",
-        "type": "quantitative",
-        "title": "Contagem"
-      }
-    },
-    "width": 600,
-    "height": 200
-  };
+  const spec = vl.markBar()
+    .data(dados)
+    .encode(
+      vl.x().fieldN("experience_level").title("Nível de Experiência"),
+      vl.y().count().title("Quantidade de Profissionais"),
+      vl.color().fieldN("employment_type").title("Tipo de Contratação")
+    )
+    .toSpec();
 
   vegaEmbed(container, spec, {actions: false});
 }
 
-// Grafico 7 - contratação por Tipo (Pizza)
+// Grafico 7 - contratação por Tipo (substituído por Plot.plot)
 function renderChart7() {
   const container = document.getElementById("chart-7");
   if (!container) return;
+  if (typeof Plot === "undefined") {
+    console.error("Observable Plot não está carregado; instale o script CDN antes de main.js");
+    return;
+  }
 
-  const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "mark": "arc",
-    "data": { "values": dados || [] },
-    "encoding": {
-      "theta": {
-        "aggregate": "count",
-        "type": "quantitative"
-      },
-      "color": {
-        "field": "employment_type",
-        "type": "nominal",
-        "title": "Contratação"
-      }
-    },
-    "width": 600,
-    "height": 200
-  };
+  container.innerHTML = "";
+  const plot = Plot.plot({
+    width: 900,
+    height: 500,
+    marginLeft: 140,
 
-  vegaEmbed(container, spec, {actions: false});
+    marks: [
+      Plot.barX(
+        dados,
+        Plot.groupY(
+          { x: "mean" },
+          {
+            x: "salary_in_usd",
+            y: "employment_type",
+            fill: "employment_type",
+            tip: true
+          }
+        )
+      )
+    ]
+  });
+
+  container.appendChild(plot);
 }
 
 // gráfico 8 - boxplot Salarial por experiência
